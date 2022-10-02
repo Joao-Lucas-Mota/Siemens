@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+// Function declaration
+void ConcatERemove(string s, string t, int k) {
+  int x = 0, y;
+  for (int i = 0; i < s.size();
+       i++) { // Counts how many letters are equal between the strings
+    if (s[i] == t[i]) {
+      x++;
+    } else {
+      break;
+    }
+  }
+  if (s.size() <=
+      t.size()) { // Defines a variable depending on the strings sizes
+    y = t.size() - x;
+  } else {
+    y = s.size() - x;
+  }
+  cout << y << endl;
+  if (y > k) { // Prints the result for each possible case based on the
+               // stipulated variable
+    cout << "\nNao";
+  } else if (y == k) {
+    cout << "\nSim";
+  } else if (k - s.size() == k) {
+    cout << "\nSim";
+  } else if ((k - s.size() >= t.size()) || ((y - (k - s.size())) % 2 == 0)) {
+    cout << "\nSim";
+  } else if ((y - k) % 2 == 0) {
+    cout << "\nSim";
+  } else if ((y - k) % 2 != 0) {
+    cout << "\nNao";
+  } else {
+    cout << "Nao";
+  }
+}
+
+int main() {
+  string s, t; // Declare the strings variables
+  int k;       // Declares the int variable
+  cin >> s;    // Receives the values for each variable
+  cin >> t;
+  cin >> k;
+  ConcatERemove(s, t, k); // Call the function to display the results
+}
