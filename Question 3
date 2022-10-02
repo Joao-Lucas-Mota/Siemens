@@ -1,0 +1,9 @@
+#include <iostream>
+int main() {
+  for (int i=1; i<=100; i++){ // Genarate the numbers from 1 to 100 in variable i
+    (i%3==0)&&(i%5==0) ? std::cout<<"FooBaa"<<std::endl : // Tests if i is a multiple of 3 and 5 simultaneously
+      i%3==0 ? std::cout<<"Foo"<<std::endl : // Tests if i is a multiple of 3
+      i%5==0 ? std::cout<<"Baa"<<std::endl : // Tests if i is a multiple of 5
+      std::cout<<i<<std::endl; // Prints the number if none of the conditions are met
+  }
+}
