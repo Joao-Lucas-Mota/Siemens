@@ -18,7 +18,6 @@ void ConcatERemove(string s, string t, int k) {
   } else {
     y = s.size() - x;
   }
-  cout << y << endl;
   if (y > k) { // Prints the result for each possible case based on the
                // stipulated variable
     cout << "\nNao";
